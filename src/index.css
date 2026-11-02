@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0a0a0c;
+    color: #eee4cb;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom dossier scrollbar */
+.custom-dossier-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-dossier-scroll::-webkit-scrollbar-track {
+  background: rgba(191, 161, 117, 0.4);
+}
+
+.custom-dossier-scroll::-webkit-scrollbar-thumb {
+  background: #8e6e44;
+  border-radius: 4px;
+}
+
+.custom-dossier-scroll::-webkit-scrollbar-thumb:hover {
+  background: #6d5332;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar for clean horizontal tab bars */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
